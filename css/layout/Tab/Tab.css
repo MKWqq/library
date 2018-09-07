@@ -1,0 +1,129 @@
+/**
+* @name: 基本css样式
+* @description: 常见的css效果
+* @author: wangqingqing
+* @update: 2018-01-22
+*/
+/* 纯CSS的导航栏Tab切换方案 */
+.g-container{
+    position:relative;
+    width:800px;
+    margin:0 auto;
+    border:1px solid #999;
+}
+
+.g-nav{
+    position:relative;
+    display:-webkit-flex;
+    display:flex;
+    justify-content:space-between;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+}
+
+.g-nav li{
+    float:left;
+    text-align:center;
+    background:#ddd;
+    color:#000;
+    list-style:none;
+    flex-grow:1;
+}
+
+.g-nav li a{
+    display:block;
+    width:200px;
+    line-height:36px;
+    font-size:18px;
+    cursor:pointer;
+    text-decoration:none;
+    color:#000;
+}
+
+#g-content1,
+#g-content2,
+#g-content3{
+    overflow:hidden;
+    width:600px;
+    height:100px;
+    box-sizing:border-box;
+    padding:10px;
+}
+
+/* 含js方法——通过给导航的li标签加z-active */
+[id^=g-content]{
+    display:none;
+    width:100%;
+    background: #fff;
+    overflow:hidden;
+    height:100px;
+    box-sizing:border-box;
+    padding:10px;
+}
+/* 初始状态显示 */
+[id*='g-content'].z-active{
+    display:block;
+}
+[id^=g-content]:target{
+    display:block;
+}
+.g-nav li.z-active{
+    background:#ff7300;
+    color:#fff;
+}
+/* 纯css方法 */
+/*#g-content1,*/
+/*#g-content2,*/
+/*#g-content3{*/
+    /*display:none;*/
+    /*width:100%;*/
+    /*background: #fff;*/
+/*}*/
+/*!* 初始状态显示 *!*/
+/*#g-content1.z-active {*/
+    /*display:block;*/
+/*}*/
+/*!* 选中显示 *!*/
+/*#g-content1:target,*/
+/*#g-content2:target,*/
+/*#g-content3:target{*/
+    /*display:block;*/
+/*}*/
+/*!* 改变z-active的li元素的背景色和字体颜色 *!*/
+/*.z-active ~ .g-nav li:first-child{*/
+    /*background:#ff7300;*/
+    /*color:#fff;*/
+/*}*/
+/*!* 清除active的li标签样式 *!*/
+/*#g-content1:target ~ .g-nav li{*/
+    /*background:#ddd;*/
+    /*color:#000;*/
+/*}*/
+
+/*!* 改变li元素的背景色和字体颜色 *!*/
+/*#g-content1:target ~ .g-nav li:nth-of-type(1){*/
+    /*background:#ff7300;*/
+    /*color:#fff;*/
+/*}*/
+
+/*!* 改变li元素的背景色和字体颜色 *!*/
+/*#g-content2:target ~ .g-nav li:nth-of-type(2){*/
+    /*background:#ff7300;*/
+    /*color:#fff;*/
+/*}*/
+/*#g-content2:target ~ .g-nav li{*/
+    /*background:#ddd;*/
+    /*color:#000;*/
+/*}*/
+/*!* 改变li元素的背景色和字体颜色 *!*/
+/*#g-content3:target ~ .g-nav li:nth-of-type(3){*/
+    /*background:#ff7300;*/
+    /*color:#fff;*/
+/*}*/
+/*#g-content3:target ~ .g-nav li{*/
+    /*background:#ddd;*/
+    /*color:#000;*/
+/*}*/
+
+

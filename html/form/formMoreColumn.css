@@ -1,0 +1,8 @@
+
+/*弹出窗排版*/
+.w-form-item__error{font-size:12px;color:#f56c6c;padding-top:4px;position:absolute;top:100%;left:0;line-height:1;}
+.w-form-item__input{float:left;position:relative;}
+.w-form-item__input:after{content:'';display:block;clear:both;}
+.w-form-item__input label{margin-top:3px;display:inline-block;}
+
+

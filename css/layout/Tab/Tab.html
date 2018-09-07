@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>basic</title>
+    <link rel="stylesheet" href="Tab.css" />
+</head>
+<body>
+<!-- 纯CSS的导航栏Tab切换方案 -->
+<div class="g-container" aria-message="change-nav">
+    <ul class='g-nav'>
+        <li class="z-active j-navLi"><a href="#g-content1">列表1</a></li>
+        <li class="j-navLi"><a href="#g-content2">列表2</a></li>
+        <li class="j-navLi"><a href="#g-content3">列表3</a></li>
+    </ul>
+    <div class="g-content-container">
+        <div id="g-content1" class="z-active">列表1内容:123456</div>
+        <div id="g-content2">列表2内容:abcdefgkijkl</div>
+        <div id="g-content3">列表3内容:12212123ffff</div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="Tab.js"></script>
+</body>
+</html>

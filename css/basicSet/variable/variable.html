@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--[if It IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <title>variable by css</title>
+    <link rel="stylesheet" href="variable.css">
+    <link rel="stylesheet" href="calc.css">
+    <style>
+        html{font-size:50px;}
+        .g-unitCSS{font-size:20px;padding:1em 1rem;border:1px solid red;}
+    </style>
+</head>
+<body>
+<!-- em与rem单位 -->
+<div class="g-unitCSS">em与rem单位</div>
+<!-- calc() -->
+<div class="g-calc">
+    <header class="g-calc-header">123</header>
+</div>
+<!-- variable -->
+<div class="box">
+    <div class="cell" style="color: #F44336;">
+        <header class="cell-header">
+            <div class="cell-title">红色</div>
+        </header>
+        <main class="cell-content">改变浏览器的宽度</main>
+    </div>
+    <div class="cell" style="color: #E91E63;">
+        <header class="cell-header">
+            <div class="cell-title">粉色</div>
+        </header>
+        <main class="cell-content">会看到布局发生了变化</main>
+    </div>
+    <div class="cell" style="color: #9C27B0;">
+        <header class="cell-header">
+            <div class="cell-title">紫色</div>
+        </header>
+        <main class="cell-content">仅仅是通过CSS改变一个变量值实现</main>
+    </div>
+    <div class="cell" style="color: #00BCD4;">
+        <header class="cell-header">
+            <div class="cell-title">青色</div>
+        </header>
+        <main class="cell-content">这比传统的响应式处理要更省代码更好维护</main>
+    </div>
+    <div class="cell" style="color: #009688;">
+        <header class="cell-header">
+            <div class="cell-title">茶色</div>
+        </header>
+        <main class="cell-content">本例子主要为了演示响应式与变化效果</main>
+    </div>
+    <div class="cell" style="color: #4CAF50;">
+        <header class="cell-header">
+            <div class="cell-title">绿色</div>
+        </header>
+        <main class="cell-content">所以，至于布局变化细节是否合理就不用在意了。</main>
+    </div>
+</div>
+<script type="text/javascript">
+    var testArr=['a','b','c','d']
+    console.log(testArr.fill('数字',2));
+    console.log(testArr);
+</script>
+</body>
+</html>

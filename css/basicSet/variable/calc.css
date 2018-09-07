@@ -1,0 +1,46 @@
+/*
+calc( <calc-sum> )
+where
+<calc-sum> = <calc-product> [ [ '+' | '-' ] <calc-product> ]*
+
+where
+<calc-product> = <calc-value> [ '*' <calc-value> | '/' <number> ]*
+
+where
+<calc-value> = <number> | <dimension> | <percentage> | ( <calc-sum> )
+*/
+
+/*
+1.表达式为+或-，运算符两边必须有空格，且必须带单位，否则得不到值
+*/
+.g-calc {
+    --size:100px;
+    --font:20px;
+    --column:4;
+    /*--font-size:calc(var(--font) - 4 / var(--column));*/
+    --font-size:calc(var(--font) - 4px / var(--column));
+    /*width: calc(100 - var(--font-size));*/
+    width: calc(100% - var(--size));
+    border: 1px solid red;
+    font-size:var(--font-size);
+}
+
+/*
+2.表达式为*或/，
+*的左边和右边数据必须且只有一边有单位，另一边必须为整数。。不能两边含单位，也不能两边不带单位。
+/只能是左边带单位，右边必须为整数number
+*/
+.g-calc-header {
+    --size:100px;
+    --font:14px;
+    /*--column:4px;*/
+    --column:4;
+    --font-size:calc(var(--font) - 4px / var(--column));
+    /*width: calc(100 - var(--font-size));*/
+    width: calc(100% - calc(var(--size) * var(--column)));
+    margin:20px auto;
+    border: 1px solid green;
+    font-size:var(--font-size);
+}
+
+

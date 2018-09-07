@@ -1,0 +1,49 @@
+/**
+* @name: flex布局
+* @description: flex布局适用于IE10+/safari6.1+/firefox22+/opera12.1+/chrome21+
+* @author: wangqingqing
+* @update: 2018-01-12
+*/
+.flex{display:-webkit-box;display:flex;}
+/* flex-direction */
+.flex-direction-row{flex-direction:row;}
+.flex-direction-row-reverse{flex-direction:row-reverse;}
+.flex-direction-column{flex-direction:column;}
+.flex-direction-column-reverse{flex-direction:column-reverse;}
+.flex-wrap-nowrap{flex-wrap:nowrap;}
+.flex-wrap-wrap{flex-wrap:wrap;}
+.flex-wrap-wrap-reverse{flex-wrap:wrap-reverse;}
+/* flex-flow */
+.flex-flow-row-nowrap{flex-flow:row nowrap;}
+.flex-flow-row-wrap{flex-flow:row wrap;}
+.flex-flow-row-wrap-reverse{flex-flow:row wrap-reverse;}
+.flex-flow-row-reverse-nowrap{flex-flow:row-reverse nowrap;}
+.flex-flow-row-reverse-wrap{flex-flow:row-reverse wrap;}
+.flex-flow-row-reverse-wrap-reverse{flex-flow:row-reverse wrap-reverse;}
+.flex-flow-column-nowrap{flex-flow:column nowrap;}
+.flex-flow-column-wrap{flex-flow:column wrap;}
+.flex-flow-column-wrap-reverse{flex-flow:column wrap-reverse;}
+.flex-flow-column-reverse-nowrap{flex-flow:column-reverse nowrap;}
+.flex-flow-column-reverse-wrap{flex-flow:column-reverse wrap;}
+.flex-flow-column-reverse-wrap-reverse{flex-flow:column-reverse wrap-reverse;}
+/* justity-content */
+.justify-content-flex-start{justify-content:flex-start;}
+.justify-content-flex-end{justify-content:flex-end;}
+.justify-content-center{justify-content:center;}
+.justify-content-space-between{justify-content:space-between;}
+.justify-content-space-around{justify-content:space-around;}
+/* align-items */
+.align-items-flex-start{align-items:flex-start;}
+.align-items-flex-end{align-items:flex-end;}
+.align-items-center{align-items:center;}
+.align-items-baseline{align-items:baseline;}
+.align-items-stretch{align-items:stretch;}
+/* align-content */
+.align-content-flex-start{flex-wrap:wrap;align-content:flex-start;}
+.align-content-flex-end{flex-wrap:wrap;align-content:flex-end;}
+.align-content-center{flex-wrap:wrap;align-content:center;}
+.align-content-space-between{flex-wrap:wrap;align-content:space-between;}
+.align-content-space-around{flex-wrap:wrap;align-content:space-around;}
+.align-content-stretch{flex-wrap:wrap;align-content:stretch;}
+
+

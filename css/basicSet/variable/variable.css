@@ -1,0 +1,127 @@
+/*
+标题：css变量
+内容：css变量定义与使用
+注意事项：
+1.变量匹配规则：根据使用变量前的css选择器，去找定义变量的css选择器。
+             匹配过程——定义变量的css选择器包含或等于使用变量的css选择器，所有符合要求的定义变量选择器中根据优先级选择变量值。
+             匹配优先级——是以使用变量的css选择器离定义变量的css选择器的距离来决定，越近则用哪个中的定义变量值
+             总结——匹配选择器属于谁就使用谁定义的变量值，关系越近就使用谁的变量值
+2.使用：var(变量，默认值)——变量默认值
+3.匹配不成功——没有定义该变量，或变量值不能作为属性值，浏览器会使用css该属性的默认值代替
+*/
+/*
+1.定义全局变量，root为html元素，根元素
+:root{--变量名:变量值}
+ */
+:root {
+    --primaryBule: #2196f3;
+    --deleteRed: #f56c6c;
+    --blueGreen: #00c1de;
+    --yellow: #ffcc5c;
+    --backgroundGray:#e5e5e5;
+}
+
+/* 任何匹配项都可以使用 */
+.g-container {
+    color: var(--deleteRed, red);
+}
+
+/*
+2.定义局部变量
+.g-header{--变量名:变量值}——只有class含g-header及子元素才能用此变量
+ */
+.g-header {
+    --deleteRed: #ffcc5c;
+}
+
+.g-header {
+    color: var(--deleteRed);
+}
+
+/*
+3.定义值与属性值不匹配——使用默认值匹配
+*/
+body {
+    --color: #e5e5e5;
+    background-color: var(--color, #cd0000)
+}
+
+/*
+4.变量相互传递
+*/
+body {
+    --size: 20;
+    --font-size: calc(var(--size) * 2px);
+    font-size: var(--font-size)
+}
+
+/*
+5.变量的空格随机性——变量引用后会有一个空格，如--size:20;font-size:var(--size)px;返回的是font-size:20 px;
+*/
+body {
+    --size: 20;
+    font-size: var(--size)
+}
+/*
+6.字符串拼接——变量--screen-category必须为字符串
+*/
+.cell-content:after{
+    content:'--screen-category : 'var(--screen-category)'。';
+}
+/*
+7.自适应网页中变量的运用
+*/
+.box {
+    --columns: 4;
+    --margins: calc(24px / var(--columns));
+    --space: calc(4px * var(--columns));
+    --fontSize: calc(20px - 4px / var(--columns));
+}
+.box {
+    width: 50%;
+    min-width: 320px;
+    margin: auto;
+    overflow: hidden;
+    --screen-category:'12';
+}
+.cell {
+    width: calc((100% - var(--margins) * var(--columns) * 2) / var(--columns));
+    margin: var(--margins);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    background-color: #f0f3f9;
+    float: left;
+}
+.cell-header {
+    background: currentColor;
+}
+.cell-title {
+    color: #fff;
+    padding: var(--space);
+    font-size: calc(var(--fontSize) * 1.2);
+}
+.cell-content {
+    height: 150px;
+    padding: var(--space);
+    font-size: var(--fontSize);
+}
+@media screen and (max-width: 1200px) {
+    .box {
+        --columns: 3;
+    }
+}
+@media screen and (max-width: 900px) {
+    .box {
+        --columns: 2;
+    }
+}
+@media screen and (max-width: 600px) {
+    .box {
+        --columns: 1;
+    }
+}
+
+
+
+
+
+

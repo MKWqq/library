@@ -1,0 +1,21 @@
+//①②③④⑤⑥⑦⑧⑨⑩
+{
+  // todo name
+  /**
+  1、name命名：
+    ①不能以点和下划线开头
+    ②不能含有大写字母
+    ③不能有空格
+    ④scoped module package.json的name：@开头。。如@myorg；
+      ⑴包的位置：一般包【node_modules/packagename】，scoped module包的位置【node_modules/@myorg/packagename】
+      ⑵引入：一般包【require('mypackage')】，scoped module包【require('@myorg/mypackage')】
+    ⑤⑥⑦⑧⑨⑩
+  */
+  "name": "server",
+  "version": "1.0.0"
+}
+
+
+
+
+

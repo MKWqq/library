@@ -1,0 +1,86 @@
+version: '2'
+services:
+  axf-tang-mgr-nginx:
+    image: axf-tang-mgr-nginx:1.0.0.1
+    restart: always
+    ports:
+      - 17080:80/tcp
+    environment:
+      - TZ=Asia/Shanghai
+    mem_limit: 209715200
+    links: 
+      - ff_web01:server01
+      - ff_web02:server02
+      - ff_web03:server03
+      - ff_web04:server04
+
+  redis:
+    image: registry.docker-cn.com/library/redis:3.2
+    volumes:
+      - ./redis_data:/data
+    expose:
+      - 6379
+
+  ff_web01:
+    image: ff_web:1.0.0.1
+    restart: always
+    ports:
+      - 3001/tcp
+    environment:
+      - NPM_CONFIG_LOGLEVEL=info
+      - TZ=Asia/Shanghai
+      - PORT=3001
+      - RUN_ENV=test
+    volumes:
+      - ./export:/src/src/server/exportExcel
+    mem_limit: 209715200
+    links: 
+      - redis
+
+  ff_web02:
+    image: ff_web:1.0.0.1
+    restart: always
+    ports:
+      - 3001/tcp
+    environment:
+      - NPM_CONFIG_LOGLEVEL=info
+      - TZ=Asia/Shanghai
+      - PORT=3001
+      - RUN_ENV=test
+    volumes:
+      - ./export:/src/src/server/exportExcel
+    mem_limit: 209715200
+    links: 
+      - redis
+
+  ff_web03:
+    image: ff_web:1.0.0.1
+    restart: always
+    ports:
+      - 3001/tcp
+    environment:
+      - NPM_CONFIG_LOGLEVEL=info
+      - TZ=Asia/Shanghai
+      - PORT=3001
+      - RUN_ENV=test
+    volumes:
+      - ./export:/src/src/server/exportExcel
+    mem_limit: 209715200
+    links: 
+      - redis
+
+  ff_web04:
+    image: ff_web:1.0.0.1
+    restart: always
+    ports:
+      - 3001/tcp
+    environment:
+      - NPM_CONFIG_LOGLEVEL=info
+      - TZ=Asia/Shanghai
+      - PORT=3001
+      - RUN_ENV=test
+    volumes:
+      - ./export:/src/src/server/exportExcel
+    mem_limit: 209715200
+    links: 
+      - redis

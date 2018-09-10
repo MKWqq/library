@@ -1,15 +1,27 @@
-/*
-水平居中
+/*todo 水平居中*/
+/**
+一、水平居中
 */
-.w-text-align{
-    text-align:center;
-}
-.w-inline-block{
-    display:inline-block;
-}
-.w-margin-auto{display:block;margin:0 auto;}
-.w-relative{position:relative;}
-.w-absolute-left-half{position:absolute;left:50%;}
+/*父块级容器设置w-text-align，子块级容器设置w-inline-block*/
+/*注意：会影响子级的内容排版*/
+.w-text-align{text-align:center;}
+.w-inline-block{display:inline-block;}
+
+/*只对block元素有效*/
+/*注意：需要对该元素设置宽度*/
+.w-margin-auto{width:400px;display:block;margin:0 auto;}
+
+/*利用position与transform两个属性*/
+/*注意：1、需要给父级元素设置position:relative
+        2.子级元素会脱离文档流，如果不给父级元素设置高度，会影响排版
+*/
+.w-relative{position:relative;height:24px;}
+.w-absolute-center{position:absolute;left:50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);}
 .w-translate-x-half{
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -17,11 +29,22 @@
     -o-transform: translateX(-50%);
     transform: translateX(-50%);}
 
+
+/*todo 垂直居中*/
 /*
 垂直居中
 */
-.w-vertical-middle-table-cell{display:table-cell;vertical-align:middle;}
-.w-absolute-top-half{position:absolute;top:50%;}
+/*display:table-cell;*/
+/*注意：如果是将块级元素设置table-cell，需要给父级设置display:table;width:100%;,才能设置当前元素width:100%;*/
+.w-display-table{display:table;width:100%;}
+.w-table-cell-middle{width:100%;display:table-cell;vertical-align:middle;}
+
+/*position+transform*/
+.w-absolute-middle{position:absolute;top:50%;-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);}
 .w-translate-y-half{
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -34,6 +57,7 @@
 */
 .w-block-horizontal-center{margin:0 auto;display:block;}
 
+/*todo 自动换行*/
 /* 自动换行 */
 .el-checkbox__label{white-space:pre-wrap;display:inline-block;width:180px;vertical-align:text-top;word-break: break-all;}
 

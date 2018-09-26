@@ -27,6 +27,7 @@ module.exports = {
         _newDOM.style.display = 'none'
         _newDOM.submit()
     },
+
     // todo 数组使用，是则返回数组；拦截错误 try catch
     returnArr: function (data) {
         if (!Array.isArray(data)) {
@@ -39,20 +40,10 @@ module.exports = {
         }
         return data
     },
-    // todo 检测是否为数组
-    /**
-     * 判断是否为数组
-     * */
-    isArrayFun: function (arg) {
-        let arrString = Object.prototype.toString.call([])
-        if (Object.prototype.toString.call(arg) === arrString) {
-            return true
-        } else {
-            return false
-        }
-    },
+
     // todo 两个变量值【数值类】互换 用异或运算符^
     /**
+     * 仅用于Number类型
      * first ^= end——等价于first = first ^ end
      * */
     changeVariable: function (first, end) {
@@ -61,6 +52,7 @@ module.exports = {
         first ^= end;
         return {first, end}
     },
+
     // todo 将颜色的 RGB 值转为 HEX 值
     /**
      * @params r——对应rgb(100,233,223)中的第一个，依次类推。。
@@ -71,7 +63,8 @@ module.exports = {
             .toString(16) // 先转成十六进制，然后返回字符串
             .substr(1);   // 去除字符串的最高位，返回后面六个字符串
     },
-    // todo 浏览器打印
+
+    // todo window浏览器打印
     /**
      * 打印指定区域内容
      * */

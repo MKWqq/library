@@ -1,0 +1,6 @@
+{
+  "scripts": {
+//    use different config file depending on certain situations .via command line --config
+    "build": "webpack --config prod.config.js"
+  }
+}

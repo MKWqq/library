@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5.history</title>
+</head>
+<body>
+<div id="test" onclick="test(this)">pushState跳转测试</div>
+<script type='text/javascript'>
+    var _testDOM=document.getElementById('test')
+    window.addEventListener('popstate',function(){
+        history.pushState(null,null,document.URL)
+    },false)
+    function test(_this){
+        console.log(_this);
+        history.pushState(null,null,'http://localhost:63342/library/html/h5.history/b.html')
+    }
+</script>
+</body>
+</html>

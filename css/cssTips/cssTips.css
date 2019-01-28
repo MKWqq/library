@@ -1,0 +1,169 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* todo 修改影响所有大小值 */
+.g-body {
+    font-size: 15px;
+    /*background: red;*/
+    /*background: conic-gradient(limegreen, green, limegreen);*/
+    /*min-height: 100%;*/
+}
+
+/* 改变父级容器font-size，等比例缩放button效果*/
+.g-scale-button {
+    padding: 0.5em;
+    background: tan;
+    font-size: 1.2em;
+    border-radius: .3em;
+}
+
+/* todo Inner rounding */
+/* Inner rounding */
+.g-inner-rounding {
+    outline: .4em solid #655;
+    box-shadow: 0 0 0 .3em #655;
+
+    border-radius: .8em;
+    border: 0;
+    padding: 1em;
+    margin: 1em;
+    background: tan;
+    font: 100%/1.5 sans-serif;
+}
+
+/* todo Loading效果 */
+.g-loading-parent {
+    min-height: 20em;
+    background: #655;
+    text-align: center;
+    display: flex;
+}
+
+.g-loading {
+    margin: auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes radius {
+    50% {
+        border-radius: 50%;
+    }
+}
+
+@keyframes color {
+    33% {
+        color: orange;
+    }
+    66% {
+        color: deeppink
+    }
+}
+
+@keyframes width {
+    50% {
+        border-width: .3em;
+    }
+}
+
+.g-loading:before {
+    content: '';
+    display: block;
+    width: 4em;
+    height: 4em;
+    margin: 0 auto 1em;
+    border: 1.5em solid;
+    color: yellowgreen;
+    box-sizing: border-box;
+    animation: 1s spin, .7s radius, 1.1s color, 1.3s width;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* todo background做边框图片 */
+@keyframes ants {
+    to {
+        background-position: 100% 100%
+    }
+}
+
+.g-border-imageback {
+    padding: 1em;
+    border: 16px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+    repeating-linear-gradient(-45deg, #58a 0, #58a 25%, transparent 0, transparent 50%) 0 /2em 2em;
+    animation: ants 12s linear infinite;
+
+    max-width: 20em;
+    font: 100%/1.6 Baskerville, Palatino, serif;
+}
+
+/* todo border-radius使用百分比 */
+.g-border-radius{
+    display: inline-block;
+    width: 16em;
+    height: 10em;
+    margin: 1em;
+    background: #fb3;
+    border-radius:100% 0 0 0;
+}
+.g-border-radius:nth-of-type(2){
+    border-radius:0 100% 0 0;
+}
+.g-border-radius:nth-of-type(3){
+    border-radius:0 0 100% 0;
+}
+.g-border-radius:nth-of-type(4){
+    border-radius:0 0 0 100%;
+}
+
+/* todo transform:skew(45deg);与transform:skew(-45deg); */
+/* 方法一： */
+/*.button { transform: skewX(45deg); }*/
+/*.button > div { transform: skewX(-45deg); }*/
+
+/*.button {*/
+    /*display: inline-block;*/
+    /*padding: .5em 1em;*/
+    /*border: 0; margin: .5em;*/
+    /*background: #58a;*/
+    /*color: white;*/
+    /*text-transform: uppercase;*/
+    /*text-decoration: none;*/
+    /*font: bold 200%/1 sans-serif;*/
+/*}*/
+/* 方法二： */
+.button {
+    position: relative;
+    display: inline-block;
+    padding: .5em 1em;
+    border: 0; margin: .5em;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font: bold 200%/1 sans-serif;
+}
+
+/* todo ----总结：内联元素自动转为块级元素方法： */
+/* 内联元素自动转为块级元素方法：
+    1、display:absolute/fixed;——不设置宽高，宽和高为absolute相对哪个元素定位，宽与高则为哪个元素的宽高
+    2、float——内联元素变为块级元素，不设置宽高，宽与高默认都为0
+    以上方法都优先于display属性
+ */
+.button::before {
+    content: ''; /* To generate the box */
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skew(45deg);
+}
+.button:focus{outline: none;}

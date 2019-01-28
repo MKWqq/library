@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cssTips</title>
+    <link rel="stylesheet" href="cssTips.css"/>
+</head>
+<body class="g-body">
+<!-- todo tips -->
+<h2>Tips</h2>
+<div class="g-inner-rounding">
+    <p>1.不设置宽高，由padding和margin撑开，设置max-width即可。</p>
+    <p>2.单位尽量不用px，用em、rem、vh、百分比等相对单位。后期维护相对容易，能达到等比例缩放。</p>
+    <a name="test">3.box-shadow是在border以外，从border-raidus圆角处开始。</a>
+    <p>4.outline是在border以外，border-raidus圆角会被留出空隙。</p>
+    <p>5.box-shadow与outline对margin无影响，margin也是border以外。</p>
+</div>
+<!-- 效果呈现 -->
+<!-- todo 一、等比例缩放button效果 -->
+<h3>一、改变父级容器font-size，等比例缩放button效果</h3>
+<div>
+    <button class="g-scale-button">等比例缩放button效果</button>
+    <button class="g-inner-rounding" style="text-align:left;">
+        <p>Inner rounding</p>
+        <a href="#test">box-shadow、outline、margin关系（3）</a>
+    </button>
+</div>
+
+<!-- todo 二、Loading效果 -->
+<h3>二、Loading效果</h3>
+<div class="g-loading-parent">
+    <p class="g-loading">Loading...</p>
+</div>
+
+<!-- todo 三、background做边框图片 -->
+<h3>三、background做边框图片</h3>
+<div class="g-border-imageback">
+    Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.
+</div>
+
+<!-- todo 四、border-radius使用百分比 -->
+<h3>四、border-radius使用百分比，为0的地方角消失</h3>
+<div>
+    <div class="g-border-radius"></div>
+    <div class="g-border-radius"></div>
+    <div class="g-border-radius"></div>
+    <div class="g-border-radius"></div>
+</div>
+
+<!-- todo 五、transform:skew(45deg);与transform:skew(-45deg); -->
+<h3>五、transform:skew(45deg);与transform:skew(-45deg);</h3>
+<button class="button"><span class="test"></span><div>Click me</div></button>
+
+</body>
+</html>

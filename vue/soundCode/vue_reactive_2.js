@@ -2,7 +2,7 @@
 /**
  * vue依赖收集追踪原理
  * @description：每一个vue实例，都建一个Watcher实例，每一个Watcher实例都有当前的update方法
- * 全局Dep实例，含所有Vue实例的Watcher实例，当set函数中的值更新，就调用Dep实例中的所有Watcher实例的update更新所有Vue视图
+ * 全局Dep实例【一个属性对应一个Dep实例，一个Dep实例对应相应的Watcher】，当vue实例中用了该值，就会在Dep实例中加入当前watcher，当set函数中的值更新，就调用Dep实例中的所有Watcher实例的update更新所有Vue视图
  * */
 function observer (value) {
     if (!value || (typeof value !== 'object')) {
@@ -54,7 +54,6 @@ function defineReactive (obj, key, val) {
         configurable: true,
         get: function reactiveGetter () {
             /* 将Dep.target（即当前的Watcher对象存入dep的subs中） */
-            console.log(Dep.target);
             dep.addSub(Dep.target);
             return val;
         },
@@ -78,8 +77,9 @@ class Vue {
 }
 let o=new Vue({
     data:{
-        test:'I am test.'
+        test:'I am test.',
+        name:'3232'
     }
 })
-o._data.test = "hello,test.";
+o._data.name = "hello,test.";
 

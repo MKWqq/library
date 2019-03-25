@@ -152,7 +152,7 @@
     font: bold 200%/1 sans-serif;
 }
 
-/* todo ----总结：内联元素自动转为块级元素方法： */
+/* todo ----总结一：内联元素自动转为块级元素方法： */
 /* 内联元素自动转为块级元素方法：
     1、display:absolute/fixed;——不设置宽高，宽和高为absolute相对哪个元素定位，宽与高则为哪个元素的宽高
     2、float——内联元素变为块级元素，不设置宽高，宽与高默认都为0
@@ -167,3 +167,17 @@
     transform: skew(45deg);
 }
 .button:focus{outline: none;}
+
+/* todo clip-path polygon多边形 */
+.g-clip-path-polygon {
+    max-width: 250px;
+    margin: 20px;
+    -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: 1s;
+}
+
+.g-clip-path-polygon:hover {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

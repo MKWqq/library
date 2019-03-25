@@ -1,0 +1,24 @@
+/*
+    description：css使用技巧
+    author：sweet W
+    date：2019-01-28
+*/
+/* todo 链接：https://www.cnblogs.com/JIEJIANG/category/1314371.html */
+/* todo ----总结一：内联元素自动转为块级元素方法： */
+/* 内联元素自动转为块级元素方法：
+    1、display:absolute/fixed;——不设置宽高，宽和高为absolute相对哪个元素定位，宽与高则为哪个元素的宽高
+    2、float——内联元素变为块级元素，不设置宽高，宽与高默认都为0
+    以上方法都优先于display属性
+ */
+
+/* todo ----总结二：360内核： */
+/* 360内核：
+   极速模式，为谷歌内核，主要以高版本浏览器为主；
+　　兼容模式，为IE内核，主要兼容较低版本浏览器，默认为电脑安装的ie浏览器内核，也可以更低调节。
+　　默认极速模式，需要添加代码：<meta name=”renderer” content=”webkit|ie-comp|ie-stand” />。
+ */
+
+/* todo ----总结三：移动端根据设计图写网页： */
+/* 移动端根据设计图写网页：
+   设计图是根据iphone6的尺寸(375*667)扩大两倍制作的，所以写成网页的时候量得的元素尺寸(width,height,padding,margin)需要除以2。
+ */

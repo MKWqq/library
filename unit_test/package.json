@@ -1,0 +1,29 @@
+{
+  "name": "unit_test",
+  "version": "1.0.0",
+  "description": "unit test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha mocha/test/*.test.js",
+    "testMocha": "mocha mocha/test/mocha.test.js --global *bar",
+    "testChaiMocha": "mocha mocha/test/mocha.chai.test.js",
+    "testShouldMocha": "mocha mocha/test/mocha.should.test.js",
+    "node": "node mocha/code/mocha_should"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKWqq/unitTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MKWqq/unitTest/issues"
+  },
+  "homepage": "https://github.com/MKWqq/unitTest#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.1",
+    "mochawesome": "^3.1.1",
+    "should": "^13.2.3"
+  }
+}

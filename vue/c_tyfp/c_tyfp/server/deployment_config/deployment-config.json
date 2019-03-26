@@ -1,0 +1,27 @@
+{
+  "EServer": {
+    "address": "http://epay-test.zhihuianxin.net",
+    "//": "1——手机网页，2——app收银台",
+    "payType": 2,
+    "appVersion": "2.7.0"
+  },
+  "UServer": {
+    "address": "http://company.zhihuianxin.net:7799/wac_kit"
+  },
+  "BankServer": {
+    "clientAddress": "http://192.168.0.124:8002/pc/home/index.html#/PayResult"
+  },
+  "//1":"支付系统",
+  "paySystem":{
+    "isSign":false,
+    "primaryKey":"axinfu"
+  },
+  "//": "壳壳",
+  "KKClient": {
+    "clientAddress": "http://localhost:9002/wac/pc"
+  },
+  "redis_ip": "192.168.0.242",
+  "redis_port": "6377",
+  "redis_password": "admin123",
+  "redis_database_no": "6"
+}

@@ -57,7 +57,7 @@ function inheritClass(){
 
 /** 设置原型，._proto_ */
 function redefineProto(){
-    Object.defineProperty(Object.prototype,'_proto_',{
+    Object.defineProperty(Object.prototype,'__proto__',{
         get(){
             return Object.getPrototypeOf(this)
         },
